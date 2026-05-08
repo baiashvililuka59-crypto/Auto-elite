@@ -1,65 +1,66 @@
-const cars = [
-    {
-        name: "Ferrari SF90 Spider",
-        img: "https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=800&q=80",
-        history: `Ferrari SF90 Spider არის მარანელოს საინჟინრო გენიის მწვერვალი და ბრენდის ისტორიაში პირველი სერიული Plug-in Hybrid როდსტერი. მისი სახელი 'SF90' სიმბოლურად უკავშირდება Scuderia Ferrari-ს დაარსების 90 წლის იუბილეს, რაც ხაზს უსვამს იმ ტექნოლოგიურ ტრანსფერს, რომელიც ფორმულა 1-დან საგზაო ავტომობილებში მოხდა. <br><br> ავტომობილის გული არის 4.0-ლიტრიანი V8 ტურბო ძრავა, რომელსაც ეხმარება სამი მაღალტექნოლოგიური ელექტროძრავა. აეროდინამიკური თვალსაზრისით, SF90 Spider არის შედევრი: მისი 'shut-off Gurney' სისტემა ავტომატურად არეგულირებს ჰაერის ნაკადს კორპუსის ზემოთ, რათა მაქსიმალური ჩამომწოლი ძალა შეიქმნას მოსახვევებში. <br><br> სალონში გამოყენებულია 'Human-Machine Interface' (HMI) კონცეფცია, სადაც ყველა მნიშვნელოვანი კონტროლი განთავსებულია საჭეზე. ეს მანქანა არა მხოლოდ სისწრაფეა, არამედ იტალიური ფუფუნების, ხელოვნებისა და მომავლის ტექნოლოგიების სინთეზი.`,
-        specs: { "ძრავა": "V8 Turbo Hybrid", "სიმძლავრე": "1000 hp", "0-100": "2.5 წ", "ფასი": "$570,000" }
-    },
-    {
-        name: "Porsche 911 GT3 RS",
-        img: "https://images.unsplash.com/photo-1707119106263-4c559b951c33?auto=format&fit=crop&w=800&q=80",
-        history: `Porsche 911 GT3 RS (992) არის ავტომობილი, რომელიც ფიზიკის კანონებს ეწინააღმდეგება. ეს არ არის უბრალოდ სპორტული მანქანა, ეს არის სატრეკო იარაღი, რომლითაც შეგიძლიათ ჩვეულებრივ გზებზე გადაადგილება. <br><br> მისი ყველაზე გამორჩეული დეტალია გიგანტური უკანა ფრთა 'swan-neck' სამაგრებით, რომელიც აღჭურვილია DRS (Drag Reduction System) სისტემით. მაღალ სიჩქარეზე ეს ფრთა იცვლის კუთხეს, რათა ან შეამციროს ჰაერის წინააღმდეგობა, ან იმოქმედოს როგორც საჰაერო მუხრუჭმა. <br><br> Porsche-ს ინჟინრებმა აქცენტი გააკეთეს წონის შემცირებაზეც – კარები, წინა ფრთები და სახურავი დამზადებულია ნახშირბადის ბოჭკოსგან (CFRP). ეს არის მანქანა, რომელიც შექმნილია წამების მეასედების მოსაგებად.`,
-        specs: { "ძრავა": "4.0L Flat-6", "სიმძლავრე": "525 hp", "0-100": "3.2 წ", "წონა": "1,450 კგ" }
-    },
-    {
-        name: "Lamborghini Revuelto",
-        img: "https://images.unsplash.com/photo-1681216393552-321111580252?auto=format&fit=crop&w=800&q=80",
-        history: `Lamborghini Revuelto არის ლეგენდარული Aventador-ის მემკვიდრე და ბრენდის პირველი V12 HPEV ჰიბრიდი. ეს ავტომობილი Lamborghini-სთვის ახალი ეპოქის დასაწყისია, სადაც ელექტროფიკაცია არ ნიშნავს ემოციის დაკარგვას. <br><br> Revuelto-ს დიზაინი შთაგონებულია ავიაციით, რაც კარგად ჩანს მის აგრესიულ ხაზებში. შასი დამზადებულია ინოვაციური 'Monofuselage' კონცეფციით, რომელიც მთლიანად ნახშირბადის ბოჭკოსგან შედგება. <br><br> ავტომობილს აქვს სამი ელექტროძრავა: ორი წინა ღერძზე და ერთი გადაცემათა კოლოფში. ეს საშუალებას იძლევა განხორციელდეს 'Torque Vectoring', რაც იდეალური მოსახვევების გარანტიაა.`,
-        specs: { "ძრავა": "6.5L V12 Hybrid", "სიმძლავრე": "1015 CV", "0-100": "2.5 წ", "მაქს. სიჩქარე": "350+ კმ/სთ" }
-    },
-    {
-        name: "Bugatti Chiron Super Sport",
-        img: "https://images.unsplash.com/photo-1627454819213-f77e436f4521?auto=format&fit=crop&w=800&q=80",
-        history: `Bugatti Chiron Super Sport არის კაცობრიობის მიერ შექმნილი ერთ-ერთი ყველაზე რთული და სწრაფი მანქანა. ეს არის ულტრა-ლუქს კლასის ჰიპერკარი, რომელიც სპეციალურად შეიქმნა მაღალ სიჩქარეებზე სტაბილურობის შესანარჩუნებლად. <br><br> დიზაინერებმა კორპუსი 25 სანტიმეტრით დააგრძელეს (ე.წ. Longtail), რათა ჰაერის ნაკადი უფრო შეუფერხებლად გადავიდეს უკანა ნაწილზე. 8.0-ლიტრიანი W16 ძრავა ოთხი ტურბინით არის ინჟინერიის საოცრება. <br><br> სალონში ვერ ნახავთ პლასტმასს – მხოლოდ უმაღლესი ხარისხის ტყავი, ალუმინი და ნახშირბადის ბოჭკოა გამოყენებული. ეს არის მანქანა, რომელიც ერთდროულად არის რაკეტაც და მობილური სასახლეც.`,
-        specs: { "ძრავა": "8.0L W16 Quad-Turbo", "სიმძლავრე": "1600 hp", "0-200": "5.8 წ", "მაქს. სიჩქარე": "440 კმ/სთ" }
-    },
-    {
-        name: "McLaren 750S",
-        img: "https://images.unsplash.com/photo-1621259182978-fbf93132d53d?auto=format&fit=crop&w=800&q=80",
-        history: `McLaren 750S არის ბრიტანული ბრენდის მიერ ოდესმე შექმნილი ყველაზე მსუბუქი და მძლავრი სერიული სუპერკარი. მან ჩაანაცვლა 720S და გახდა კიდევ უფრო სწრაფი და ზუსტი. <br><br> ინჟინრებმა შეძლეს წონის შემცირება 30 კილოგრამით, რაც მიიღწევა ახალი ნახშირბადის სავარძლების და მსუბუქი დისკების ხარჯზე. <br><br> McLaren-ის უნიკალური PCC III დაკიდების სისტემა უზრუნველყოფს საოცარ სტაბილურობას. სალონი სრულად გადაკეთდა – მართვის რეჟიმების გადამრთველები ახლა მაჩვენებელთა დაფის გვერდით არის, რათა მძღოლმა საჭიდან ხელის აუღებლად მართოს მანქანა.`,
-        specs: { "ძრავა": "4.0L V8 Twin-Turbo", "სიმძლავრე": "750 PS", "0-100": "2.8 წ", "წონა": "1,277 კგ" }
-    },
-    {
-        name: "Nissan GT-R NISMO",
-        img: "https://images.unsplash.com/photo-1707323671754-04f762696b99?auto=format&fit=crop&w=800&q=80",
-        history: `Nissan GT-R NISMO, იგივე 'Godzilla', არის იაპონური სიზუსტის განსახიერება. 2024 წლის მოდელში ინჟინრებმა კიდევ უფრო დახვეწეს აეროდინამიკა – დაამატეს წინა შეზღუდული ხახუნის დიფერენციალი (LSD), რათა ავტომობილმა კიდევ უფრო სწრაფად გაიაროს მოსახვევები. <br><br> თითოეული GT-R NISMO-ს ძრავა იწყობა ხელით ერთი 'Takumi' ოსტატის მიერ, რაც ხარისხის უმაღლეს გარანტიას იძლევა. ავტომობილი აღჭურვილია ნახშირბად-კერამიკული მუხრუჭებით და სპეციალური GT3 სარბოლო ტურბინებით, რაც მას წარმოუდგენელ დინამიკას ანიჭებს.`,
-        specs: { "ძრავა": "3.8L V6 Twin-Turbo", "სიმძლავრე": "600 hp", "0-100": "2.8 წ", "ამძრავი": "AWD" }
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+const scoreElement = document.getElementById('score');
+
+canvas.width = 400;
+canvas.height = 600;
+
+let player = { x: 180, y: 530, w: 40, h: 40, color: '#d4af37' };
+let obstacles = [];
+let score = 0;
+let gameActive = true;
+
+// მართვა თითით ან მაუსით
+canvas.addEventListener('mousemove', (e) => {
+    let rect = canvas.getBoundingClientRect();
+    player.x = e.clientX - rect.left - player.w / 2;
+});
+
+function createObstacle() {
+    let size = Math.random() * 40 + 20;
+    obstacles.push({
+        x: Math.random() * (canvas.width - size),
+        y: -size,
+        w: size,
+        h: size,
+        speed: Math.random() * 3 + 2
+    });
+}
+
+function update() {
+    if (!gameActive) return;
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // მოთამაშის ხატვა
+    ctx.fillStyle = player.color;
+    ctx.fillRect(player.x, player.y, player.w, player.h);
+
+    // დაბრკოლებების მართვა
+    for (let i = 0; i < obstacles.length; i++) {
+        let o = obstacles[i];
+        o.y += o.speed;
+        ctx.fillStyle = 'red';
+        ctx.fillRect(o.x, o.y, o.w, o.h);
+
+        // შეჯახების შემოწმება
+        if (player.x < o.x + o.w && player.x + player.w > o.x &&
+            player.y < o.y + o.h && player.y + player.h > o.y) {
+            gameActive = false;
+            alert("თამაში დასრულდა! შენი ქულაა: " + score);
+            location.reload();
+        }
+
+        // ქულის მომატება
+        if (o.y > canvas.height) {
+            obstacles.splice(i, 1);
+            score++;
+            scoreElement.innerText = "ქულა: " + score;
+        }
     }
-];
 
-const gallery = document.getElementById('gallery');
-const modal = document.getElementById('carModal');
-const modalTitle = document.getElementById('modalTitle');
-const modalBody = document.getElementById('modalBody');
-const closeBtn = document.querySelector('.close');
+    if (Math.random() < 0.02) createObstacle();
+    requestAnimationFrame(update);
+}
 
-cars.forEach(car => {
-    const card = document.createElement('div');
-    card.className = 'car-card';
-    card.innerHTML = `
-        <img src="${car.img}" alt="${car.name}" onerror="this.src='https://via.placeholder.com/400x250?text=AutoElite'">
-        <div class="car-info">
-            <h3>${car.name}</h3>
-            <p>დააჭირე სრული ინფოსთვის</p>
-        </div>
-    `;
-
-    card.onclick = () => {
-        modalTitle.innerText = car.name;
-        let content = `<div class="info-section">
-            <h4 style="color:#d4af37; margin-bottom:12px;">ისტორია:</h4>
-            <p style="color:#ccc; line-height:1.7; text-align:justify; margin-bottom:30px;">${car.history}</p>
-            <h4 style="color:#d4af37; border-bottom:1px solid #333; padding-bottom:8px; margin-bottom:15px;">მონაცემები:</h4>`;
-        
-        for (let key in car.specs
-    
+update();
