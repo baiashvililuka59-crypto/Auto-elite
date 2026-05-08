@@ -1,13 +1,88 @@
-body { background: #000; color: #fff; font-family: sans-serif; margin: 0; text-align: center; }
-nav { background: #111; padding: 20px; border-bottom: 2px solid #d4af37; }
-.logo { font-size: 24px; font-weight: bold; }
+/* ძირითადი სტილები */
+body { 
+    background-color: #0a0a0a; 
+    color: #ffffff; 
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+    margin: 0; 
+    line-height: 1.6;
+}
+
+nav { 
+    background: #000; 
+    padding: 20px; 
+    text-align: center; 
+    border-bottom: 2px solid #d4af37; 
+}
+
+.logo { font-size: 28px; font-weight: bold; letter-spacing: 2px; }
 .logo span { color: #d4af37; }
-.gallery { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 30px; }
-.car-card { background: #1a1a1a; border: 1px solid #333; border-radius: 15px; width: 300px; cursor: pointer; transition: 0.3s; overflow: hidden; }
-.car-card:hover { border-color: #d4af37; transform: scale(1.02); }
-.car-card img { width: 100%; height: 200px; object-fit: cover; }
-.car-info { padding: 15px; }
-.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }
-.modal-content { background: #111; margin: 15% auto; padding: 25px; width: 80%; max-width: 400px; border: 2px solid #d4af37; border-radius: 20px; position: relative; }
-.close { position: absolute; right: 15px; top: 10px; color: #d4af37; font-size: 30px; cursor: pointer; }
-.spec-row { display: flex; justify-content: space-between; border-bottom: 1px solid #222; padding: 10px 0; }
+
+.gallery { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 25px; 
+    padding: 40px 20px; 
+}
+
+/* ბარათების სტილი */
+.car-card { 
+    background: #161616; 
+    border: 1px solid #333; 
+    border-radius: 12px; 
+    width: 300px; 
+    overflow: hidden; 
+    cursor: pointer; 
+    transition: 0.3s ease; 
+}
+
+.car-card:hover { 
+    transform: translateY(-10px); 
+    border-color: #d4af37; 
+}
+
+.car-card img { 
+    width: 100%; 
+    height: 200px; 
+    object-fit: cover; 
+}
+
+.car-info { padding: 15px; text-align: center; }
+.car-info h3 { margin: 10px 0; color: #d4af37; }
+
+/* მოდალური ფანჯრის სტილი */
+.modal { 
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0; top: 0; 
+    width: 100%; height: 100%; 
+    background-color: rgba(0,0,0,0.9); 
+    overflow-y: auto; /* აუცილებელია დიდი ტექსტისთვის */
+}
+
+.modal-content { 
+    background-color: #111; 
+    margin: 5% auto; 
+    padding: 30px; 
+    border: 1px solid #d4af37; 
+    width: 90%; 
+    max-width: 600px; 
+    border-radius: 15px; 
+    position: relative; 
+}
+
+.close { 
+    position: absolute; 
+    right: 20px; top: 10px; 
+    color: #d4af37; 
+    font-size: 35px; 
+    cursor: pointer; 
+}
+
+.spec-box { 
+    display: flex; 
+    justify-content: space-between; 
+    padding: 10px 0; 
+    border-bottom: 1px solid #222; 
+}
