@@ -1,34 +1,117 @@
-/* მოდალური ფანჯრის სტილი */
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 100; 
-    left: 0; top: 0;
-    width: 100%; height: 100%; 
-    background-color: rgba(0,0,0,0.85);
-    backdrop-filter: blur(5px);
+body {
+    background-color: #050505;
+    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    line-height: 1.6;
 }
 
-.modal-content {
-    background-color: #1a1a1a;
-    margin: 15% auto;
-    padding: 30px;
-    border: 2px solid #d4af37;
-    width: 80%;
-    max-width: 500px;
-    border-radius: 20px;
-    color: white;
+nav {
+    background: #000;
+    padding: 20px;
+    border-bottom: 2px solid #d4af37;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo span { color: #d4af37; }
+
+header {
+    padding: 60px 20px;
     text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200');
+    background-size: cover;
+    background-position: center;
 }
 
-.close {
-    color: #d4af37;
-    float: right;
-    font-size: 35px;
-    font-weight: bold;
+header h1 { font-size: 2.5rem; margin-bottom: 10px; color: #d4af37; }
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.car-card {
+    background: #111;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #222;
+    transition: all 0.4s ease;
     cursor: pointer;
 }
 
-.close:hover { color: #fff; }
+.car-card:hover {
+    transform: translateY(-10px);
+    border-color: #d4af37;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+}
 
-hr { border: 0; border-top: 1px solid #333; margin: 15px 0; }
+.car-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.car-info { padding: 20px; text-align: center; }
+.car-info h3 { margin: 0; font-size: 20px; color: #d4af37; }
+.car-info p { font-size: 14px; color: #888; margin-top: 10px; }
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    background: #111;
+    margin: 5% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 20px;
+    border: 1px solid #d4af37;
+    position: relative;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close {
+    position: absolute;
+    right: 20px; top: 15px;
+    font-size: 30px;
+    color: #d4af37;
+    cursor: pointer;
+}
+
+#modalTitle { color: #d4af37; margin-bottom: 20px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+
+.spec-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #222;
+}
+
+.spec-label { color: #d4af37; font-weight: bold; }
+
+footer { padding: 30px; text-align: center; background: #000; border-top: 1px solid #222; margin-top: 40px; }
