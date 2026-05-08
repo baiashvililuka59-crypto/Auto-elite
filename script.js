@@ -1,57 +1,63 @@
 const cars = [
     {
         name: "Ferrari SF90 Spider",
-        img: "https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=800&q=80",
-        desc: "SF90 Spider არის Ferrari-ს პირველი ჰიბრიდული როდსტერი. მას აქვს 1000 ცხენის ძალა და 0-დან 100-მდე სულ რაღაც 2.5 წამში ჩქარდება."
+        img: "https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=800",
+        desc: "Ferrari-ს პირველი ჰიბრიდული როდსტერი, რომელიც ტექნოლოგიურ მწვერვალს წარმოადგენს.",
+        specs: {
+            "წელი": "2024",
+            "ძრავა": "4.0L V8 Hybrid",
+            "სიმძლავრე": "1000 hp",
+            "0-100 კმ/სთ": "2.5 წამი",
+            "ფასი": "$570,000"
+        }
     },
     {
-        name: "Porsche 911 GT3",
-        img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80",
-        desc: "Porsche 911 GT3 არის ნამდვილი სარბოლო ავტომობილი, რომელიც ლეგალურაია გზებისთვის. მისი 4.0 ლიტრიანი ძრავა უნიკალურ ხმას გამოსცემს."
+        name: "Porsche 911 GT3 RS",
+        img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800",
+        desc: "აეროდინამიკის შედევრი, შექმნილი მათთვის, ვისაც ტრეკზე სისწრაფე უყვარს.",
+        specs: {
+            "წელი": "2023",
+            "ძრავა": "4.0L Flat-6",
+            "სიმძლავრე": "518 hp",
+            "0-100 კმ/სთ": "3.2 წამი",
+            "ფასი": "$223,800"
+        }
     },
     {
-        name: "BMW M4 Competition",
-        img: "https://images.unsplash.com/photo-1617814076367-b759c7d6274a?auto=format&fit=crop&w=800&q=80",
-        desc: "M4 Competition აერთიანებს კომფორტს და წარმოუდგენელ სიმძლავრეს. იდეალურია როგორც ყოველდღიური მართვისთვის, ისე ტრეკისთვის."
+        name: "Lamborghini Revuelto",
+        img: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800",
+        desc: "Lamborghini-ს ახალი ეპოქა - V12 ძრავისა და ელექტრო სიმძლავრის კომბინაცია.",
+        specs: {
+            "წელი": "2024",
+            "ძრავა": "6.5L V12 Hybrid",
+            "სიმძლავრე": "1001 hp",
+            "0-100 კმ/სთ": "2.5 წამი",
+            "ფასი": "$600,000"
+        }
+    },
+    {
+        name: "Bugatti Chiron Super Sport",
+        img: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800",
+        desc: "მსოფლიოში ერთ-ერთი ყველაზე სწრაფი და მდიდრული ჰიპერკარი.",
+        specs: {
+            "წელი": "2022",
+            "ძრავა": "8.0L W16 Quad-Turbo",
+            "სიმძლავრე": "1600 hp",
+            "0-100 კმ/სთ": "2.4 წამი",
+            "მაქს. სიჩქარე": "440 კმ/სთ",
+            "ფასი": "$3,800,000"
+        }
+    },
+    {
+        name: "Mercedes-AMG ONE",
+        img: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800",
+        desc: "Formula 1-ის ტექნოლოგია პირდაპირ საგზაო ავტომობილში.",
+        specs: {
+            "წელი": "2023",
+            "ძრავა": "1.6L V6 Hybrid Turbo",
+            "სიმძლავრე": "1063 hp",
+            "0-100 კმ/სთ": "2.9 წამი",
+            "ფასი": "$2,700,000"
+        }
     }
 ];
-
-const gallery = document.getElementById('gallery');
-const modal = document.getElementById('carModal');
-const modalTitle = document.getElementById('modalTitle');
-const modalDesc = document.getElementById('modalDesc');
-const closeBtn = document.querySelector('.close');
-
-// მანქანების გამოტანა ეკრანზე
-cars.forEach(car => {
-    const card = document.createElement('div');
-    card.className = 'car-card';
-    card.innerHTML = `
-        <img src="${car.img}">
-        <div class="car-info">
-            <h3>${car.name}</h3>
-            <p>დააჭირე დეტალებისთვის</p>
-        </div>
-    `;
-
-    // დაჭერის ფუნქცია (კლიკი)
-    card.onclick = () => {
-        modalTitle.innerText = car.name;
-        modalDesc.innerText = car.desc;
-        modal.style.display = "block";
-    };
-
-    gallery.appendChild(card);
-});
-
-// ფანჯრის დახურვა X-ზე დაჭერით
-closeBtn.onclick = () => {
-    modal.style.display = "none";
-};
-
-// ფანჯრის დახურვა ეკრანზე ნებისმიერ ადგილას დაჭერით
-window.onclick = (event) => {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-};
